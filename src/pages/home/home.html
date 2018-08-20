@@ -1,0 +1,72 @@
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content>
+  <div class="content">
+<ion-grid>
+  <div [ngClass]="classes">
+    <ion-row>
+      <ion-col class="header">
+        <h1>Weather</h1>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col class="today">
+        Today
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="temperature">
+        {{this.currentTemp}}&deg;
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col class="temp_max_min">
+          {{this.maxTemp}}&deg;/{{this.minTemp}}&deg;
+        </ion-col>
+      </ion-row>
+
+    <ion-row class="location">
+      <ion-col col-6 class="city">
+        {{this.city}}
+      </ion-col>
+
+      <ion-col col-6 class="country">
+        {{this.country}}
+      </ion-col>
+    </ion-row>
+  </div>
+
+  
+ <!-- <ion-row>
+    <ion-col class="description">
+      {{this.description}}
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col class="temp_max_min">
+      {{this.maxTemp}}&deg;/{{this.minTemp}}&deg;
+    </ion-col>
+  </ion-row>-->
+
+  <ion-row class="adjust">
+    <ion-col class="chart-container" [ngClass]="chartClass">
+      <canvas #doughnutCanvas responsive="true"></canvas>
+    </ion-col>
+    <ion-col class="description"> 
+      {{this.description}}
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+  </div>
+</ion-content>

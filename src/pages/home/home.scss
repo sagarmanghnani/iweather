@@ -1,0 +1,77 @@
+page-home {
+   
+    .header{
+        text-align: center;
+        h1{
+            font-size: 1.6em;
+            margin-top: 0px;
+        }
+    }
+
+    .location{
+        font-size: 1.3em;
+        .city{
+            padding-left:7%;
+        }
+        .country{
+            text-align: right;
+            padding-right: 7%;
+        }
+    }
+
+    .temperature{
+        text-align: center;
+        margin-top: 2%;
+        font-size: 6.5em;
+        padding-left: 10%;
+    }
+    .description{
+        text-align: center;
+        font-size: 2.1em;
+        position: relative;
+        bottom: 140px;
+    }
+
+    .temp_max_min{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    //background color of weather
+
+    .default{
+        background-color: color($colors, clearsky);
+        color: white;
+    }
+    .evening{
+        background-color: color($colors, evening);
+        color: white;
+    }
+    .clearSky{
+        background-color: color($colors, clearsky);
+        color: white;
+    }
+
+    .rainy{
+        background-color: color($colors, rainy);
+        color: white;
+    }
+
+    //classes for background color ends here
+    .today{
+        text-align: center;
+        margin-top: 3%;
+        font-size: 2.3em;
+    }
+
+    canvas{
+        height: 150%;
+    }
+    .adjust{
+        margin-top: 10%;
+    }
+
+    .chart-container{
+        height: 42vh;
+        width: 180vw;
+    }
+}
