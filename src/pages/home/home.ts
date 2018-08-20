@@ -30,8 +30,14 @@ export class HomePage {
       "clearSky":false,
       "rainy":false,
     }
+    textClass:any = {
+      "def": true,
+      "night":false,
+      "clear":false,
+      "rain":false,
+    }
     color:string[];
-    
+    storingStatus:any;
   constructor(public navCtrl: NavController, public weatherreport:WeatherreportProvider, public storage:Storage) {
     
     this.storage.get('place').then((val)=>{
@@ -62,6 +68,7 @@ export class HomePage {
         this.clearSky = false;
       }
       this.setCss();
+      this.setCondition();
       this.doughnout = new Chart(this.doughnutCanvas.nativeElement,{
         type: 'doughnut',
         data:{
@@ -117,30 +124,47 @@ export class HomePage {
       this.classes.default = false;
       this.classes.evening = true;
       this.color = ['#212121', '#616161'];
+      this.textClass.def = false;
+      this.textClass.night = true;
     }
     else if(this.clearSky && !this.evening)
     {
       this.classes.default = false;
       this.classes.clearSky = true;
       this.color = ['#FF8F00', '#FFB300'];
+      this.textClass.def = false;
+      this.textClass.clear = true;
     }
     else if(!this.clearSky && !this.evening)
     {
       this.classes.default = false;
       this.classes.rainy = true;
       this.color = ['#0277BD', '#039BE5'];
+      this.textClass.def = false;
+      this.textClass.rain = true;
     }
     else if(!this.clearSky && this.evening)
     {
       this.classes.default = false;
       this.classes.evening = true;
       this.color = ['#212121', '#616161'];
+      this.textClass.def = false;
+      this.textClass.night = true;
     }
     else
     {
       this.classes.default = true;
       this.color = ['#FF8F00', '#FFB300'];
     }
+  }
+
+  setCondition()
+  {
+    this.storingStatus = {
+      nights:this.evening,
+      clear:this.clearSky,
+    }
+    this.storage.set('aboutCondition', this.storingStatus);
   }
 }
 

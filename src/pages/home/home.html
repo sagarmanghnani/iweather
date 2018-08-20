@@ -62,7 +62,7 @@
     <ion-col class="chart-container" [ngClass]="chartClass">
       <canvas #doughnutCanvas responsive="true"></canvas>
     </ion-col>
-    <ion-col class="description"> 
+    <ion-col class="description" [ngClass] = "textClass"> 
       {{this.description}}
     </ion-col>
   </ion-row>

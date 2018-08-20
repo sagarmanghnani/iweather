@@ -21,6 +21,14 @@ export class SettingsPage {
   country:string;
   location:FormGroup;
   submitAttempt:boolean = false;
+  night:boolean;
+  clear:boolean;
+  classes:any = {
+    "default":true,
+    "evening":false,
+    "clearSky":false,
+    "rainy":false,
+  }
   constructor(public navCtrl: NavController,
      public navParams: NavParams, 
      public formBuilder:FormBuilder, 
@@ -36,7 +44,43 @@ export class SettingsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
-  }
+    this.storage.get('aboutCondition').then((val) => {
+      this.night = val.nights;
+      this.clear = val.clear;
+      if(this.clear && this.night)
+      {
+        this.classes.default = false;
+        this.classes.evening = true;
+      }
+      else if(this.clear && !this.night)
+      {
+        this.classes.default = false;
+        this.classes.clearSky = true;      
+       }
+      else if(!this.clear && !this.night)
+      {
+        this.classes.default = false;
+        this.classes.rainy = true;
+        
+      }
+      else if(!this.clear && this.night)
+      {
+        this.classes.default = false;
+        this.classes.evening = true;
+        
+      }
+      else
+      {
+        this.classes.default = true;
+        
+      }
+      
+    });
+   }
+  
+
+
+
 
   submit()
   {

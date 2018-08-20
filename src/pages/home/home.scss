@@ -74,4 +74,19 @@ page-home {
         height: 42vh;
         width: 180vw;
     }
+
+    //applying condition for description now
+    .def{
+        color: color($colors, clearsky);
+    }
+    .clear{
+        color: color($colors, clearsky);
+    }
+    .night{
+        color: color($colors, evening);
+    }
+    .rain{
+        color: color($colors, rainy);
+    }
+    //ends here
 }

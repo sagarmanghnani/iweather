@@ -1,3 +1,36 @@
 page-tabs {
+    
+        .default{
+            .tabs{
+                ion-icon::before {
+                    color: color($colors, clearsky);
+                }
+        }
+    }
+        .evening{
+            .tabs{
+                ion-icon::before {
+                    color: color($colors, evening);
+                }
+             }
+    
+        }
+        .clearSky{
+            
+            .tabs{
+                ion-icon::before {
+                    color: color($colors, clearsky);
+                }
+             }
+        }
+    
+        .rainy{
+            
+            .tabs{
+                ion-icon::before {
+                    color: color($colors, rainy);
+                }
+             }
+        }
+    }
 
-}

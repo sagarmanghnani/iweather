@@ -1,3 +1,55 @@
 page-about {
+    ion-navbar{
+        background-color: red;
+    }
+    .default{
+        background-color: color($colors, clearsky);
+        .list{
+            ion-item{
+             background-color: color($colors, clearsky);
+             color: white;
+            }
+         }
+    }
+    .evening{
+        background-color: color($colors, evening);
+        color: white;
+        .list{
+            ion-item{
+             background-color: color($colors, evening);
+             color: white;
+            }
+         }
 
+    }
+    .clearSky{
+        background-color: color($colors, clearsky);
+        color: white;
+        .list{
+            ion-item{
+             background-color: color($colors, clearsky);
+             color: white;
+            }
+         }
+    }
+
+    .rainy{
+        background-color: color($colors, rainy);
+        color: white;
+        .list{
+            ion-item{
+             background-color: color($colors, rainy);
+             color: white;
+            }
+         }
+    }
+
+
+
+    .list{
+       ion-item{
+        background-color: green;
+        color: white;
+       }
+    }
 }
